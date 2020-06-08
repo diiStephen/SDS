@@ -6,5 +6,4 @@
 *.out
 *.pdf
 makefile~
-build/rbtree.so
-build/test-engine
+build/slltest

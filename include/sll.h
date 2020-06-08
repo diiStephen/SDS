@@ -14,6 +14,7 @@ struct sll {
   struct Node *tail;
 };
 
+typedef struct sll sll_t;
 
 void init_sll(struct sll *);
 void dest_sll(struct sll *);
@@ -21,10 +22,10 @@ void dest_sll(struct sll *);
 void* first(struct sll *);
 void* last(struct sll *);
 
-void add_first(struct sll *);
-void add_last(struct sll *);
+void ins_first(struct sll *, void *);
+void ins_last(struct sll *, void *);
 
-void* remove_first(struct sll *);
+void* rm_first(struct sll *);
 
 
 #endif

@@ -25,13 +25,11 @@ void dest_sll(struct sll *list) {
 void* first(struct sll *list) {
   if(list->size == 0) return NULL;
   return list->head->data;
-  }
 }
 
 void* last(struct sll *list) {
   if(list->size == 0) return NULL;
   return list->tail->data;
-  }
 }
 
 void ins_first(struct sll *list, void *data) {

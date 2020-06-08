@@ -24,7 +24,7 @@ all: sll.o
 	@echo '...done!'
 
 sll.o: sll.c sll.h
-	@echo 'Building test-engine module...'
+	@echo 'Building singly linked list module...'
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 	@echo '...done!'
 

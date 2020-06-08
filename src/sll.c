@@ -3,16 +3,12 @@
 #include<stdlib.h>
 
 struct Node *init_node(void *d, struct Node *n) {
-
   struct Node *newest = NULL;
   if ((newest = malloc(sizeof(struct Node)))== 0)
     fprintf(stderr, "Error allocating memory for new node.\n");
-
   newest->data = d;
   newest->next = n;
-
   return newest;
-
 }
 
 void init_sll(struct sll *list) {
@@ -27,18 +23,14 @@ void dest_sll(struct sll *list) {
 }
 
 void* first(struct sll *list) {
-  if(list->size == 0) {
-    return NULL;
-  } else {
-    return list->head->data;
+  if(list->size == 0) return NULL;
+  return list->head->data;
   }
 }
 
 void* last(struct sll *list) {
-  if(list->size == 0) {
-    return NULL;
-  } else {
-    return list->tail->data;
+  if(list->size == 0) return NULL;
+  return list->tail->data;
   }
 }
 

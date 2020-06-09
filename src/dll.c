@@ -46,9 +46,9 @@ void ins_btn(dll_t *list, node_t *pred, node_t *succ, void *d) {
 }
 
 void ins_first(dll_t *list, void *d) {
-  ins_btn(list, list->header, list->header->next, d);
+  ins_btn(list, list->header, GET_NXT(list->header), d);
 }
 
 void ins_last(dll_t *list, void *d) {
-  ins_btn(list, list->trailer->prev, list->trailer, d);
+  ins_btn(list, GET_PRV(list->trailer), list->trailer, d);
 }

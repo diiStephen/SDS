@@ -23,3 +23,17 @@ void init_dll(dll_t *list) {
 int is_empty(dll_t *list) {
   return SIZE(list);
 }
+
+void* first(dll_t *list) {
+  if(SIZE(list) > 0)
+    return list->header->next->data;
+  else
+    return NULL;
+}
+
+void* last(dll_t *list) {
+  if(SIZE(list) > 0)
+    return list->trailer->prev->data;
+  else
+    return NULL;
+}

@@ -3,7 +3,7 @@
 
 #define SIZE(L)\
   printf("Size of list: %d\n", (L).size);
-
+  
 int main(void) {
   printf("Starting singly linked list test!\n");
 

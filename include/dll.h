@@ -23,4 +23,13 @@ typedef struct dll dll_t;
 void init_dll(dll_t *);
 void dest_dll(dll_t *);
 
+void* first(dll_t *);
+void* last(dll_t *);
+
+void ins_first(dll_t *);
+void ins_last(dll_t *);
+
+void* rm_first(dll_t *);
+void* rm_last(dll_t *);
+
 #endif

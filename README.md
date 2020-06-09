@@ -7,3 +7,4 @@ A collection of standard data structures implemented in C.
 Data Structure | Source | Comments
 ---------------|--------|---------
 Single Linked List | sll.c, sll.h  | void * for generic type stored at each node.  
+Doubly Linked List | dll.c, dll.h  | void * for generic type stored at each node. 

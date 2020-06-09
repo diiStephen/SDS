@@ -49,11 +49,14 @@ void* last(dll_t *);
 void ins_first(dll_t *, void *);
 void ins_last(dll_t *, void *);
 
-// Insert between utility function.
+// Private insert between utility function.
 void ins_btn(dll_t *, node_t *, node_t *, void *);
 
 // Remove functions at the head and tail.
 void* rm_first(dll_t *);
 void* rm_last(dll_t *);
+
+// Private remove utility function. 
+void* rm(dll_t *, node_t *);
 
 #endif

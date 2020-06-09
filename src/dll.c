@@ -37,3 +37,18 @@ void* last(dll_t *list) {
   else
     return NULL;
 }
+
+void ins_btn(dll_t *list, node_t *pred, node_t *succ, void *d) {
+  node_t *newest = new_node(pred, succ, d);
+  pred->next = newest;
+  succ->prev = newest;
+  list->size++;
+}
+
+void ins_first(dll_t *list, void *d) {
+  ins_btn(list, list->header, list->header->next, d);
+}
+
+void ins_last(dll_t *list, void *d) {
+  ins_btn(list, list->trailer->prev, list->trailer, d);
+}

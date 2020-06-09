@@ -5,12 +5,6 @@
 /* All operations supported are O(1), except for dest_sll, which is O(n). */
 /* We assume that free(N), for a node N, is an O(1) operation. */
 
-#define node_init(T) \
-  struct node { \
-    T data; \
-     struct node *next; \
-  };
-
 struct Node {
   void *data;
   struct Node *next;

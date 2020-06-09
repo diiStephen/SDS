@@ -38,6 +38,9 @@ void dest_dll(dll_t *);
 node_t* new_node(node_t *, node_t *, void *);
 void dest_node(node_t *);
 
+//Return non-zero value if list is non-empty.
+int is_empty(dll_t *);
+
 // Accessors for first and last elements.
 void* first(dll_t *);
 void* last(dll_t *);

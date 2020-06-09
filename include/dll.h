@@ -12,7 +12,9 @@ struct Node {
 struct dll {
   int size;
   struct Node *header;
-  struct Node *trailer; 
-}
+  struct Node *trailer;
+};
+
+typedef struct dll dll_t;
 
 #endif

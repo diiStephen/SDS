@@ -19,7 +19,7 @@ SLLTNAME   = slltest
 
 default: $(TARGET)
 
-all: sll.o
+all: sll.o dll.o
 	@echo 'Starting linking process...'
 	#$(CC) $(LFLAGS) rbtree.o errors.o -o $(BUILD)/$(NAME)
 	@echo '...done!'
@@ -34,6 +34,11 @@ sll-test.o: sll-test.c sll.h
 
 sll.o: sll.c sll.h
 	@echo 'Building singly linked list module...'
+	$(CC) $(CFLAGS) $(INCLUDE) $<
+	@echo '...done!'
+
+dll.o: dll.c dll.h
+	@echo 'Building doubly linked list module...'
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 	@echo '...done!'
 

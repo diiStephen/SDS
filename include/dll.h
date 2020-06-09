@@ -3,6 +3,9 @@
 
 /* Generic doubly linked list implementation. */
 
+#define SIZE(L)\
+  (L)->size
+
 struct Node {
   void *data;
   struct Node *next;
@@ -16,5 +19,8 @@ struct dll {
 };
 
 typedef struct dll dll_t;
+
+void init_dll(dll_t *);
+void dest_dll(dll_t *);
 
 #endif

@@ -24,6 +24,15 @@ void init_dll(dll_t *list) {
   list->header->next = list->trailer; // header -> trailer
 }
 
+void dest_dll(dll_t *list) {
+  while(SIZE(list) > 0)
+    rm_first(list);
+  dest_node(list->header);
+  dest_node(list->trailer);
+  list->header = NULL;
+  list->trailer = NULL;
+}
+
 int is_empty(dll_t *list) {
   return SIZE(list);
 }

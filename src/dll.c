@@ -12,6 +12,10 @@ node_t* new_node(node_t * p, node_t * n, void * d) {
   return newest;
 }
 
+void dest_node(node_t *node) {
+  free(node);
+}
+
 //Note: This dll uses head and tail sentinel nodes.
 void init_dll(dll_t *list) {
   list->size = 0;
@@ -51,4 +55,21 @@ void ins_first(dll_t *list, void *d) {
 
 void ins_last(dll_t *list, void *d) {
   ins_btn(list, GET_PRV(list->trailer), list->trailer, d);
+}
+
+void* rm(dll_t *list, node_t *node) {
+  void* res = node->data;
+  node->prev->next = node->next;
+  node->next->prev = node->prev;
+  list->size--;
+  dest_node(node);
+  return res;
+}
+
+void* rm_first(dll_t *list) {
+  return rm(list, GET_NXT(list->header));
+}
+
+void *rm_last(dll_t *list) {
+  return rm(list, GET_PRV(list->trailer));
 }

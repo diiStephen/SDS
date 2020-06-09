@@ -33,5 +33,12 @@ int main(void) {
 
   SIZE(list);
 
+  ins_first(&list, &i);
+  ins_first(&list, &i);
+  ins_first(&list, &i);
+  ins_first(&list, &i);
+
+  SIZE(list);
+
   return 0;
 }

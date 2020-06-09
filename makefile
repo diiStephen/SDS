@@ -16,6 +16,7 @@ INCLUDE    = -I $(INCLUDEDIR)
 SRC        = src
 BUILD      = build
 SLLTNAME   = slltest
+DLLTNAME   = dlltest
 
 default: $(TARGET)
 
@@ -29,7 +30,15 @@ slltest: sll-test.o sll.o
 	$(CC) sll-test.o sll.o -o $(BUILD)/$(SLLTNAME)
 	@echo '..done!'
 
+dlltest: dll-test.o dll.o
+	@echo 'Building dll-test program..'
+	$(CC) dll-test.o dll.o -o $(BUILD)/$(DLLTNAME)
+	@echo '..done!'
+
 sll-test.o: sll-test.c sll.h
+	$(CC) $(CFLAGS) $(INCLUDE) $<
+
+dll-test.o: dll-test.c dll.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
 sll.o: sll.c sll.h

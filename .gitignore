@@ -6,4 +6,4 @@
 *.out
 *.pdf
 makefile~
-build/slltest
+build/*

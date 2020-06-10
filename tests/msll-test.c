@@ -16,5 +16,6 @@ int main(void) {
   ins_last(&l, 76);
   ins_last(&l,32);
   printf("Current vals: size: %d, head: %p, tail: %p\n", l.size, l.head,l.tail);
+  deinit_list(&l);
   return 0;
 }

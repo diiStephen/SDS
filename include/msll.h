@@ -71,4 +71,15 @@
     }\
   } while (0)
 
+#define deinit_list(l)\
+  do{\
+    while((l)->size > 0) {\
+      node_t *sav = (l)->head;\
+      (l)->head = (l)->head->next;\
+      (l)->size--;\
+      free(sav);\
+    }\
+    memset((l), 0, sizeof(*(l)));\
+  } while (0)
+
 #endif

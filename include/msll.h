@@ -37,11 +37,23 @@
 #define ins_first(l,x)\
   do{\
     node_t *n = malloc(sizeof(node_t));\
-    n->data = x;\
     n->next = (l)->head;\
     (l)->head = n;\
+    n->data = x;\
+    if ((l)->size == 0) {\
+      (l)->tail = n;\
+    }\
     (l)->size++;\
   } while (0)
 
+#define ins_last(l,x)\
+  do{\
+    node_t *n = malloc(sizeof(node_t));\
+    n->next = NULL;\
+    if ((l)->size != 0)\
+      (l)->tail->next = n;\
+    (l)->tail = n;\
+    (l)->size++;\
+  } while (0)
 
 #endif

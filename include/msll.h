@@ -6,6 +6,8 @@
 /* ISSUE: What if we need multiple lists of different types? */
 /* That would incurr multiple definitions of the node_t type, an error. */
 
+/* ISSUE: No checking the return of malloc is done. */
+
 #include<string.h>
 #include<stdlib.h>
 

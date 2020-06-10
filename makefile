@@ -32,7 +32,7 @@ slltest: sll-test.o sll.o
 	@echo '..done!'
 
 mslltest: msll-test.o msll.o
-	@echo 'Building sll-test program..'
+	@echo 'Building msll-test program..'
 	$(CC) msll-test.o msll.o -o $(BUILD)/$(MSLLTNAME)
 	@echo '..done!'
 

@@ -14,6 +14,15 @@
 * the string concatenation to name the nodes according to their type.
 * it seems like then I would have to include that name in every macro
 * call.
+*
+* The other issue is that the node_t type is not defined until the macro
+* is called, so I cannot use that type as a parameter to any function
+* with declaration in this file. This makes it difficult to put the update
+* procedure into a function rather than in the macro.
+*
+* Ideally, we want to seperate operations involving the data of type T, and
+* everything else involving pointer updates and memory manipulation into
+* a function. Using an intermediate type, i.e. char * may work.
 */
 
 #include<string.h>
@@ -34,6 +43,8 @@
   };\
   typedef struct Node node_t
 
+#define unpack_(l)\
+  (char**)&((l)->head), (char**)&(l)->tail, &(l)->size, sizeof((l)->head)
 
 #define init_list(l)\
   memset((l), 0, sizeof(*(l)))
@@ -94,5 +105,9 @@
     }\
     memset((l), 0, sizeof(*(l)));\
   } while (0)
+
+//head, tail, size.
+int ins_first_(char**, char**, int*, int);
+
 
 #endif

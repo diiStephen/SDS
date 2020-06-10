@@ -16,6 +16,7 @@ INCLUDE    = -I $(INCLUDEDIR)
 SRC        = src
 BUILD      = build
 SLLTNAME   = slltest
+MSLLTNAME  = mslltest
 DLLTNAME   = dlltest
 
 default: $(TARGET)
@@ -30,6 +31,11 @@ slltest: sll-test.o sll.o
 	$(CC) sll-test.o sll.o -o $(BUILD)/$(SLLTNAME)
 	@echo '..done!'
 
+mslltest: msll-test.o msll.o
+	@echo 'Building sll-test program..'
+	$(CC) msll-test.o msll.o -o $(BUILD)/$(MSLLTNAME)
+	@echo '..done!'
+
 dlltest: dll-test.o dll.o
 	@echo 'Building dll-test program..'
 	$(CC) dll-test.o dll.o -o $(BUILD)/$(DLLTNAME)
@@ -41,8 +47,16 @@ sll-test.o: sll-test.c sll.h
 dll-test.o: dll-test.c dll.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
+msll-test.o: msll-test.c msll.h
+	$(CC) $(CFLAGS) $(INCLUDE) $<
+
 sll.o: sll.c sll.h
 	@echo 'Building singly linked list module...'
+	$(CC) $(CFLAGS) $(INCLUDE) $<
+	@echo '...done!'
+
+msll.o: msll.c msll.h
+	@echo 'Building macro singly linked list module...'
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 	@echo '...done!'
 

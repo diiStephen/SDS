@@ -3,11 +3,19 @@
 
 /* Generic singly linked list using macros for code generation. */
 
-#define node_init(T) \
-  struct node { \
-    T data; \
-    struct node *next; \
-  };
+#define init_list_t(T)\
+  typedef struct {\
+    int size;\
+    node_t *head;\
+    node_t *tail;\
+  } sll_t\
+
+#define init_node_t(T)\
+  struct Node {\
+    T data;\
+    struct Node *next;\
+  };\
+  typedef struct Node node_t
 
 
 

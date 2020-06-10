@@ -44,7 +44,7 @@
   typedef struct Node node_t
 
 #define unpack_(l)\
-  (char**)&((l)->head), (char**)&(l)->tail, &(l)->size, sizeof((l)->head)
+  (char**)&(l)->head, (char**)&(l)->tail, &(l)->size, sizeof((l)->head)
 
 #define init_list(l)\
   memset((l), 0, sizeof(*(l)))
@@ -71,6 +71,14 @@
       (l)->tail = n;\
     }\
     (l)->size++;\
+  } while (0)
+
+#define ins_first_v2(l,x)\
+  do{\
+    char *addr = NULL;\
+    ins_first_(unpack_(l), &addr);\
+    (l)->head->data = x;\
+    (l)->head->next = (node_t*)addr;\
   } while (0)
 
 #define ins_last(l,x)\
@@ -106,8 +114,8 @@
     memset((l), 0, sizeof(*(l)));\
   } while (0)
 
-//head, tail, size.
-int ins_first_(char**, char**, int*, int);
+//head, tail, size, memsize, sav
+int ins_first_(char **, char **, int *, int, char **);
 
 
 #endif

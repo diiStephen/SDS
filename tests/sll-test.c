@@ -4,9 +4,6 @@
 #define SIZE(L)\
   printf("Size of list: %d\n", (L).size);
 
-//init_node_t(int);
-//init_list_t(int);
-
 int main(void) {
   printf("Starting singly linked list test!\n");
 

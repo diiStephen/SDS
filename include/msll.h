@@ -13,7 +13,7 @@
 * macro? It seems like the way to overcome the issues above is to use
 * the string concatenation to name the nodes according to their type.
 * it seems like then I would have to include that name in every macro
-* call.  
+* call.
 */
 
 #include<string.h>
@@ -47,6 +47,9 @@
 #define last(l)\
   ( (l)->size == 0 ? 0 : (l)->tail->data )
 
+// This can be vastly shortend as the only time we need reference to x is
+// when we assign the data field of the new node, but after the splice in,
+// l->head will be a reference to this node, so we can assign it there.
 #define ins_first(l,x)\
   do{\
     node_t *n = malloc(sizeof(node_t));\

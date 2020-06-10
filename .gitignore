@@ -7,3 +7,5 @@
 *.pdf
 makefile~
 build/*
+m_stk.c
+m_stk.h

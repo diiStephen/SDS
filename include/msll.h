@@ -3,6 +3,9 @@
 
 /* Generic singly linked list using macros for code generation. */
 
+/* ISSUE: What if we need multiple lists of different types? */
+/* That would incurr multiple definitions of the node_t type, an error. */
+
 #include<string.h>
 #include<stdlib.h>
 
@@ -54,6 +57,16 @@
       (l)->tail->next = n;\
     (l)->tail = n;\
     (l)->size++;\
+  } while (0)
+
+#define rm_first(l)\
+  do{\
+    if((l)->size > 0) {\
+      (l)->head = (l)->head->next;\
+      (l)->size--;\
+      if((l)->size == 0)\
+        (l)->tail = NULL;\
+    }\
   } while (0)
 
 #endif

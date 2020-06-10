@@ -4,6 +4,7 @@
 /* Generic singly linked list using macros for code generation. */
 
 #include<string.h>
+#include<stdlib.h>
 
 #define init_list_t(T)\
   typedef struct {\
@@ -32,6 +33,15 @@
 
 #define last(l)\
   ( (l)->size == 0 ? 0 : (l)->tail->data )
+
+#define ins_first(l,x)\
+  do{\
+    node_t *n = malloc(sizeof(node_t));\
+    n->data = x;\
+    n->next = (l)->head;\
+    (l)->head = n;\
+    (l)->size++;\
+  } while (0)
 
 
 #endif

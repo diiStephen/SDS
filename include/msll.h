@@ -15,10 +15,11 @@
 
 #define init_node_t(T)\
   struct Node {\
-    T data;\
+    T *data;\
     struct Node *next;\
   };\
   typedef struct Node node_t
+
 
 #define init_list(l)\
   memset((l), 0, sizeof(*(l)))
@@ -27,10 +28,10 @@
   (l)->size
 
 #define first(l)\
-  ( (l)->size == 0 ? 0 : (l)->head->data )
+  ( (l)->size == 0 ? NULL : (l)->head->data )
 
 #define last(l)\
-  ( (l)->size == 0 ? 0 : (l)->tail->data )
+  ( (l)->size == 0 ? NULL : (l)->tail->data )
 
 
 #endif

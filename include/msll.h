@@ -15,7 +15,7 @@
 
 #define init_node_t(T)\
   struct Node {\
-    T *data;\
+    T data;\
     struct Node *next;\
   };\
   typedef struct Node node_t
@@ -28,10 +28,10 @@
   (l)->size
 
 #define first(l)\
-  ( (l)->size == 0 ? NULL : (l)->head->data )
+  ( (l)->size == 0 ? 0 : (l)->head->data )
 
 #define last(l)\
-  ( (l)->size == 0 ? NULL : (l)->tail->data )
+  ( (l)->size == 0 ? 0 : (l)->tail->data )
 
 
 #endif

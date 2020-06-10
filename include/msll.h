@@ -62,10 +62,12 @@
 #define rm_first(l)\
   do{\
     if((l)->size > 0) {\
+      node_t *sav = (l)->head;\
       (l)->head = (l)->head->next;\
       (l)->size--;\
       if((l)->size == 0)\
         (l)->tail = NULL;\
+      free(sav);\
     }\
   } while (0)
 

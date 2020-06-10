@@ -8,6 +8,14 @@
 
 /* ISSUE: No checking the return of malloc is done. */
 
+/*
+* Is there a way to avoid having to pass the name of the type to every
+* macro? It seems like the way to overcome the issues above is to use
+* the string concatenation to name the nodes according to their type.
+* it seems like then I would have to include that name in every macro
+* call.  
+*/
+
 #include<string.h>
 #include<stdlib.h>
 

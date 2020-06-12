@@ -19,6 +19,9 @@ struct sll {
 
 typedef struct sll sll_t;
 
+/* Create a new Node. */
+struct Node* init_node(void *, struct Node *);
+
 /* Initialize the singly linked list. */
 void init_sll(struct sll *);
 

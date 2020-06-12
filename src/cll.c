@@ -26,7 +26,7 @@ void init_cll(cll_t *list) {
 
 void dest_cll(cll_t *list) {
   while(size(l) > 0) {
-    //Remove nodes.
+    rm_first(list);
   }
 }
 

@@ -26,6 +26,16 @@ void init_cll(cll_t *list) {
 
 void dest_cll(cll_t *list) {
   while(size(l) > 0) {
-    //Remove nodes. 
+    //Remove nodes.
   }
+}
+
+void* first(cll_t *list) {
+  if (size(l) == 0) return NULL;
+  return list->tail->next->data;
+}
+
+void* last(cll_t *list) {
+  if (size(l) == 0) return NULL;
+  return list->tail->data; 
 }

@@ -4,7 +4,7 @@
 
 struct Node *init_node(void *d, struct Node *n) {
   struct Node *newest = NULL;
-  if ((newest = malloc(sizeof(struct Node)))== 0)
+  if ((newest = malloc(sizeof(struct Node))) == NULL)
     fprintf(stderr, "Error allocating memory for new node.\n");
   newest->data = d;
   newest->next = n;

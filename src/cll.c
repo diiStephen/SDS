@@ -37,5 +37,17 @@ void* first(cll_t *list) {
 
 void* last(cll_t *list) {
   if (size(l) == 0) return NULL;
-  return list->tail->data; 
+  return list->tail->data;
+}
+
+void ins_first(cll_t *list, void *d) {
+  node_t newest = create_node(NULL, d);
+  if(size(l) == 0) {
+    newest->next = newest; //Circular
+    list->tail = newest;
+  } else {
+    newest->next = list->tail->next;
+    list->tail->next = newest;
+  }
+  size++;
 }

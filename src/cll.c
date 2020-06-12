@@ -51,3 +51,8 @@ void ins_first(cll_t *list, void *d) {
   }
   size++;
 }
+
+void ins_last(cll_t *list, void *d) {
+  ins_first(list, d);
+  list->tail = list->tail->next; 
+}

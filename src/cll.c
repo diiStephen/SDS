@@ -54,5 +54,10 @@ void ins_first(cll_t *list, void *d) {
 
 void ins_last(cll_t *list, void *d) {
   ins_first(list, d);
-  list->tail = list->tail->next; 
+  list->tail = list->tail->next;
+}
+
+void rotate(cll_t *list) {
+  if(list->tail != NULL)
+    list->tail = list->tail->next;
 }

@@ -10,5 +10,12 @@ node_t* create_node(node_t *n, void *d) {
   }
   newest->next = n;
   newest->data = d;
-  return newest; 
+  return newest;
+}
+
+void dest_node(node_t **n) {
+  if (*n != NULL) {
+    free(n);
+    *n = NULL;
+  }
 }

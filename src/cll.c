@@ -61,3 +61,17 @@ void rotate(cll_t *list) {
   if(list->tail != NULL)
     list->tail = list->tail->next;
 }
+
+void* rm_first(cll_t *list) {
+  void *response = NULL;
+  if(size(list) > 0) {
+    node_t *sav = list->tail->next; // head of the list.
+    list->tail->next = list->tail->next->next; // new head of the list.
+    if(--list->size == 0) {
+      list->tail = NULL;
+    }
+    response = sav->data;
+    dest_node(&sav);
+  }
+  return response;
+}

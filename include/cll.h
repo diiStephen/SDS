@@ -21,7 +21,7 @@ typedef struct node node_t;
 
 //Constructor and destructor functions.
 node_t* create_node(node_t *, void *);
-node_t* dest_node(node_t *);
+void dest_node(node_t *);
 void init_cll(cll_t *);
 void dest_cll(cll_t *);
 

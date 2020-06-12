@@ -19,3 +19,13 @@ void dest_node(node_t **n) {
     *n = NULL;
   }
 }
+
+void init_cll(cll_t *list) {
+  memset(list, 0, sizeof(cll_t));
+}
+
+void dest_cll(cll_t *list) {
+  while(size(l) > 0) {
+    //Remove nodes. 
+  }
+}

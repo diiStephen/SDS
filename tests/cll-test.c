@@ -2,9 +2,13 @@
 #include<stdio.h>
 #include<stdlib.h>
 
+#define header(h)\
+  printf("Test: %s\n", h)
+
 int main(void) {
 
   {
+    header("01");
     cll_t l; // New Circularly linked list.
     init_cll(&l); // Initalize the list.
     for(int i = 0; i < 10; i++) {

@@ -43,7 +43,7 @@ dlltest: dll-test.o dll.o
 
 clltest: cll-test.o cll.o
 	@echo 'Building cll-test program..'
-	$(CC) dll-test.o dll.o -o $(BUILD)/$(CLLTNAME)
+	$(CC) cll-test.o cll.o -o $(BUILD)/$(CLLTNAME)
 	@echo '..done!'
 
 sll-test.o: sll-test.c sll.h

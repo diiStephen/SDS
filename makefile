@@ -18,7 +18,7 @@ BUILD      = build
 SLLTNAME   = slltest
 MSLLTNAME  = mslltest
 DLLTNAME   = dlltest
-
+CLLTNAME   = clltest
 default: $(TARGET)
 
 all: sll.o dll.o
@@ -41,6 +41,11 @@ dlltest: dll-test.o dll.o
 	$(CC) dll-test.o dll.o -o $(BUILD)/$(DLLTNAME)
 	@echo '..done!'
 
+clltest: cll-test.o cll.o
+	@echo 'Building cll-test program..'
+	$(CC) dll-test.o dll.o -o $(BUILD)/$(CLLTNAME)
+	@echo '..done!'
+
 sll-test.o: sll-test.c sll.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
@@ -48,6 +53,9 @@ dll-test.o: dll-test.c dll.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
 msll-test.o: msll-test.c msll.h
+	$(CC) $(CFLAGS) $(INCLUDE) $<
+
+cll-test.o: cll-test.c clss.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
 sll.o: sll.c sll.h
@@ -62,6 +70,11 @@ msll.o: msll.c msll.h
 
 dll.o: dll.c dll.h
 	@echo 'Building doubly linked list module...'
+	$(CC) $(CFLAGS) $(INCLUDE) $<
+	@echo '...done!'
+
+cll.o: cll.c cll.h
+	@echo 'Building Circularly linked list module...'
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 	@echo '...done!'
 

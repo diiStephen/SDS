@@ -1,39 +1,37 @@
 #include "cll.h"
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 #define header(h)\
-  printf("Test: %s\n", h)
+  do {\
+    printf("-----------------------------\n");\
+    printf("Test: %s\n", h);\
+    printf("-----------------------------\n");\
+  } while (0)
 
+#define create_int(n)\
+  memset(malloc(sizeof(int)), n, sizeof(int))
 
 int main(void) {
 
   {
-    header("01");
+    header("Insertion Test");
     cll_t l; // New Circularly linked list.
     init_cll(&l); // Initalize the list.
-    for(int i = 0; i < 10; i++) {
-      int *p = malloc(sizeof(int));
-      *p = i;
-      ins_first(&l, (void*)p);
-    }
-    node_t *walk = l.tail->next;
-    for(int j = 0; j < size(&l); j++) {
-      printf("Data: %d\n", *(int*)walk->data);
-      walk = walk->next;
-    }
-    printf("First element: %d\n", *((int*)first(&l)));
-    printf("Last element: %d\n", *((int*)last(&l)));
-    rm_first(&l);
-    printf("First element: %d\n", *((int*)first(&l)));
-    printf("Last element: %d\n", *((int*)last(&l)));
-    rotate(&l);
-    printf("First element: %d\n", *((int*)first(&l)));
-    printf("Last element: %d\n", *((int*)last(&l)));
     dest_cll(&l);
   }
 
-
+  {
+    header("Rotation Test");
+    cll_t l;
+    init_cll(&l);
+    ins_first(&l, create_int(32));
+    ins_first(&l, create_int(100));
+    ins_first(&l, create_int(42));
+    rotate(&l);
+    dest_cll(&l);
+  }
 
 
 }

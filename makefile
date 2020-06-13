@@ -55,7 +55,7 @@ dll-test.o: dll-test.c dll.h
 msll-test.o: msll-test.c msll.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
-cll-test.o: cll-test.c clss.h
+cll-test.o: cll-test.c cll.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
 sll.o: sll.c sll.h

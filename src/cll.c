@@ -1,6 +1,7 @@
 #include "cll.h"
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 node_t* create_node(node_t *n, void *d) {
   node_t *newest = malloc(sizeof(node_t));
@@ -25,31 +26,31 @@ void init_cll(cll_t *list) {
 }
 
 void dest_cll(cll_t *list) {
-  while(size(l) > 0) {
+  while(size(list) > 0) {
     rm_first(list);
   }
 }
 
 void* first(cll_t *list) {
-  if (size(l) == 0) return NULL;
+  if (size(list) == 0) return NULL;
   return list->tail->next->data;
 }
 
 void* last(cll_t *list) {
-  if (size(l) == 0) return NULL;
+  if (size(list) == 0) return NULL;
   return list->tail->data;
 }
 
 void ins_first(cll_t *list, void *d) {
-  node_t newest = create_node(NULL, d);
-  if(size(l) == 0) {
+  node_t *newest = create_node(NULL, d);
+  if(size(list) == 0) {
     newest->next = newest; //Circular
     list->tail = newest;
   } else {
     newest->next = list->tail->next;
     list->tail->next = newest;
   }
-  size++;
+  list->size++;
 }
 
 void ins_last(cll_t *list, void *d) {

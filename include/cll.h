@@ -13,7 +13,7 @@ struct node {
 
 struct cll {
   int size;
-  node_t *tail;
+  struct node *tail;
 };
 
 typedef struct cll cll_t;

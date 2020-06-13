@@ -16,7 +16,7 @@ node_t* create_node(node_t *n, void *d) {
 
 void dest_node(node_t **n) {
   if (*n != NULL) {
-    free(n);
+    free(*n);
     *n = NULL;
   }
 }

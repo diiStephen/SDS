@@ -18,6 +18,10 @@ int main(void) {
     }
     printf("First element: %d\n", *((int*)first(&l)));
     printf("Last element: %d\n", *((int*)last(&l)));
+    rm_first(&l);
+    printf("First element: %d\n", *((int*)first(&l)));
+    printf("Last element: %d\n", *((int*)last(&l)));
+    dest_cll(&l);
   }
 
 

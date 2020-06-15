@@ -27,7 +27,7 @@ void init_stk(lstack_t *);
 void dest_stk(lstack_t *);
 int size(lstack_t *);
 void* pop(lstack_t *);
-void push(lstack_t *);
+void push(lstack_t *, void *);
 void* top(lstack_t *);
 
 #endif

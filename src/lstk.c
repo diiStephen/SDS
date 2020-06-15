@@ -20,3 +20,15 @@ void dest_stk(lstack_t *s) {
 int size(lstack_t *s) {
   return s->data->size;
 }
+
+void* pop(lstack_t *s) {
+  return rm_first(s->data);
+}
+
+void push(lstack_t *s, void *d) {
+  ins_first(s->data, d);
+}
+
+void* top(lstack_t *s) {
+  return first(s->data);
+}

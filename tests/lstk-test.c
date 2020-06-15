@@ -50,5 +50,20 @@ int main(void) {
     footer("T1");
   }
 
+  {
+    header("T2");
+    lstack_t s;
+    init_stk(&s);
+    for(int i = 0; i < 1000; i++) {
+      int *p = malloc(sizeof(int));
+      *p = i;
+      push(&s, p);
+    }
+    c_assert(size(&s) == 1000);
+    c_assert(*(int*)pop(&s) == 999);
+    c_assert(size(&s) == 999);
+    footer("T2");
+  }
+
   print_result;
 }

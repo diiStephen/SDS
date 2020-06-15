@@ -19,6 +19,7 @@ SLLTNAME   = slltest
 MSLLTNAME  = mslltest
 DLLTNAME   = dlltest
 CLLTNAME   = clltest
+LSTKTNAME  = lstktest
 default: $(TARGET)
 
 all: sll.o dll.o
@@ -46,6 +47,11 @@ clltest: cll-test.o cll.o
 	$(CC) cll-test.o cll.o -o $(BUILD)/$(CLLTNAME)
 	@echo '..done!'
 
+lstktest: lstk-test.o lstk.o
+	@echo 'Building lstk-test program...'
+	$(CC) lstk-test.o lstk.o $(BUILD)/$(LSTKTNAME)
+	@echo '...done!'
+
 sll-test.o: sll-test.c sll.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
@@ -56,6 +62,9 @@ msll-test.o: msll-test.c msll.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
 cll-test.o: cll-test.c cll.h
+	$(CC) $(CFLAGS) $(INCLUDE) $<
+
+lstk-test.o: lstk-test.c lstk.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
 sll.o: sll.c sll.h
@@ -75,6 +84,11 @@ dll.o: dll.c dll.h
 
 cll.o: cll.c cll.h
 	@echo 'Building Circularly linked list module...'
+	$(CC) $(CFLAGS) $(INCLUDE) $<
+	@echo '...done!'
+
+lstk.o: lstk.o lstk.h
+	@echo 'Building linked list stack module...'
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 	@echo '...done!'
 

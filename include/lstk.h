@@ -18,7 +18,7 @@
 #include "sll.h"
 
 struct Stack {
-  sll_t data;
+  sll_t *data;
 };
 
 typedef struct Stack lstack_t;

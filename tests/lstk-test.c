@@ -11,12 +11,28 @@
     printf("-----------------------------\n\n");\
   } while (0)
 
+#define c_assert(t)\
+  do {\
+    int result = t;\
+    if(result) {\
+      printf("Passed: [%s]\n", #t);\
+      pass++;\
+    } else {\
+      printf("Failed: [%s][%s][%d]\n", #t, __FILE__, __LINE__);\
+      fail++;\
+    }\
+  } while (0)
 
+#define print_result\
+  printf("Passed: %d\nFailed: %d\n", pass, fail)
+
+int pass = 0;
+int fail = 0;
 
 int main(void) {
 
   {
-    header("Push and Pop");
+    header("T1");
     lstack_t s;
     init_stk(&s);
     for(int i = 10; i < 13; i++) {
@@ -26,12 +42,10 @@ int main(void) {
     }
     pop(&s);
     pop(&s);
-    assert(size(&s) == 1);
-    assert(*(int*)pop(&s) == 10);
-    assert(size(&s) == 0);
+    c_assert(size(&s) == 1);
+    c_assert(*(int*)pop(&s) == 10);
+    c_assert(size(&s) == 0);
   }
 
-
-
-
+  print_result;
 }

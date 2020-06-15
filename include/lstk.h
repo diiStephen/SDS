@@ -18,7 +18,15 @@
 #include "sll.h"
 
 struct Stack {
-  int size, capacity; 
-}
+  int size;
+  sll_t data;
+};
+
+typedef struct Stack lstack_t;
+
+int size(lstack_t *);
+void* pop(lstack_t *);
+void push(lstack_t *);
+void* top(lstack_t *);
 
 #endif

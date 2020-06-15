@@ -7,6 +7,7 @@ A collection of standard data structures implemented in C.
 Data Structure | Source | Comments | Design
 ---------------|--------|----------|---------
 Singly Linked List | sll.h, sll.c  | void * for generic type stored at each node. | Minimal.
-Singly Linked List | msll.h, msll.c | Macro generated code for generic types.     | Macro/Experimental. 
+Singly Linked List | msll.h, msll.c | Macro generated code for generic types.     | Macro/Experimental.
 Doubly Linked List | dll.h, dll.c  | void * for generic type stored at each node. | Minimal.
 Circularly Linked List | cll.h, cll.c | void * for generic type stored at each node. | Minimal.
+Stack | lstk.h, lstk.c | void * for generics. | Adaptor (singly linked list). 

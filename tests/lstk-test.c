@@ -4,27 +4,29 @@
 #include<stdlib.h>
 #include<string.h>
 
-#define header(h)\
+#define header(msg)\
   do {\
     printf("-----------------------------\n");\
-    printf("Test: %s\n", h);\
-    printf("-----------------------------\n\n");\
+    printf("TEST: %s\n", msg);\
+    printf("-----------------------------\n");\
   } while (0)
 
 #define c_assert(t)\
   do {\
-    int result = t;\
-    if(result) {\
-      printf("Passed: [%s]\n", #t);\
-      pass++;\
-    } else {\
-      printf("Failed: [%s][%s][%d]\n", #t, __FILE__, __LINE__);\
-      fail++;\
-    }\
+    int result_ = t;\
+    printf("%s [%s][%s][%d]\n", result_ ? "PASS" : "FAIL", #t, __FILE__, __LINE__);\
+    if(result_) { pass++; } else { fail++; }\
   } while (0)
 
+#define footer(msg)\
+  do {\
+    printf("-----------------------------\n");\
+    printf("END: %s\n", msg);\
+    printf("-----------------------------\n\n");\
+  } while(0)
+
 #define print_result\
-  printf("Passed: %d\nFailed: %d\n", pass, fail)
+  printf("Passed: %d\tFailed: %d\n", pass, fail)
 
 int pass = 0;
 int fail = 0;
@@ -45,6 +47,7 @@ int main(void) {
     c_assert(size(&s) == 1);
     c_assert(*(int*)pop(&s) == 10);
     c_assert(size(&s) == 0);
+    footer("T1");
   }
 
   print_result;

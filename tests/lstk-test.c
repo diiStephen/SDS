@@ -14,7 +14,10 @@ int main(void) {
       *p = i;
       push(&s, p);
     }
-    printf("Size: %d\n", size(&s));
-    printf("First: %d\n", *((int*)first(s.data)));
+    pop(&s);
+    pop(&s);
+    assert(size(&s) == 1);
+    assert(*(int*)pop(&s) == 10);
+    assert(size(&s) == 0);
   }
 }

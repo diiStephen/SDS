@@ -18,12 +18,13 @@
 #include "sll.h"
 
 struct Stack {
-  int size;
   sll_t data;
 };
 
 typedef struct Stack lstack_t;
 
+void init_stk(lstack_t *);
+void dest_stk(lstack_t *);
 int size(lstack_t *);
 void* pop(lstack_t *);
 void push(lstack_t *);

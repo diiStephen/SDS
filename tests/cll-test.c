@@ -10,9 +10,6 @@
     printf("-----------------------------\n\n");\
   } while (0)
 
-#define create_int(n)\
-  memset(malloc(sizeof(int)), n, sizeof(int))
-
 int main(void) {
 
   {
@@ -26,9 +23,9 @@ int main(void) {
     header("Rotation Test");
     cll_t l;
     init_cll(&l);
-    ins_first(&l, create_int(32));
-    ins_first(&l, create_int(100));
-    ins_first(&l, create_int(42));
+    //ins_first(&l, create_int(32));
+    //ins_first(&l, create_int(100));
+    //ins_first(&l, create_int(42));
     rotate(&l);
     dest_cll(&l);
   }

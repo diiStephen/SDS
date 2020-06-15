@@ -4,9 +4,6 @@
 #include<stdlib.h>
 #include<string.h>
 
-#define create_int(n)\
-  memset(malloc(sizeof(int)), n, sizeof(int))
-
 int main(void) {
 
   {
@@ -14,7 +11,7 @@ int main(void) {
     init_stk(&s);
     for(int i = 10; i < 13; i++) {
       int *p = malloc(sizeof(int));
-      *p = i; 
+      *p = i;
       push(&s, p);
     }
     printf("Size: %d\n", size(&s));

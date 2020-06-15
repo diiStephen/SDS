@@ -12,9 +12,11 @@ int main(void) {
   {
     lstack_t s;
     init_stk(&s);
-    push(&s, create_int(10));
-    push(&s, create_int(11));
-    push(&s, create_int(12));
+    for(int i = 10; i < 13; i++) {
+      int *p = malloc(sizeof(int));
+      *p = i; 
+      push(&s, p);
+    }
     printf("Size: %d\n", size(&s));
     printf("First: %d\n", *((int*)first(s.data)));
   }

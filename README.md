@@ -27,4 +27,8 @@ structures so that I only have to write one testing program and plugin
 the appropriate data structure. At least there should be a unified testing
 framework for each of the types of stacks, lists, etc. I think this can best
 be accomplished with a few simple macros and a header file. The rest must be
-specific to the data structure under consideration. 
+specific to the data structure under consideration.
+
+3. Need to be careful regarding naming. Names may have to be more specific
+in order to avoid conflicts. This is also true for variables and macro
+naming. 

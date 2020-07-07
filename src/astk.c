@@ -39,3 +39,11 @@ void push(astack_t *s, void *d) {
   }
   s->data[++s->top] = d;
 }
+
+void* pop(astack_t *s) {
+  if(size(s) == 0) return NULL;
+  void *ans = s->data[s->top];
+  s->data[s->top] = NULL;
+  s->top--;
+  return ans;
+}

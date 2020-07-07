@@ -11,7 +11,7 @@ Singly Linked List | msll.h, msll.c | Macro generated code for generic types.   
 Doubly Linked List | dll.h, dll.c  | void * for generic type stored at each node. | Minimal.
 Circularly Linked List | cll.h, cll.c | void * for generic type stored at each node. | Minimal.
 Stack | lstk.h, lstk.c | void * for generics. | Adapter (singly linked list).
-
+Stack | astk.h, astk.c | void * for generics. | Array based stack. | Minimal. 
 
 # TODO
 

@@ -20,5 +20,9 @@ void init_astk(astack_t *s, int cap) {
 void dest_astk(astack_t *s) {
   free(s->data);
   s->top = -1;
-  s->capacity = 0; 
+  s->capacity = 0;
+}
+
+int size(astack_t *s) {
+  return s->top + 1;
 }

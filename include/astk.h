@@ -8,7 +8,7 @@
 *
 *
 * When push is called on a full stack, then the program shuts down with
-* an error. When pop is called on an empty stack, then NULL is returned. 
+* an error. When pop is called on an empty stack, then NULL is returned.
 */
 
 #define CAPACITY 1000

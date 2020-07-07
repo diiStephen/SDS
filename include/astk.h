@@ -6,6 +6,7 @@
 * underlying storage. Default capacity, provided as a symbolic constant, is
 * 1000.
 *
+* Size, top, push, pop -- O(1) time. 
 *
 * When push is called on a full stack, then the program shuts down with
 * an error. When pop is called on an empty stack, then NULL is returned.

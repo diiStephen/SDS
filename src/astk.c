@@ -26,3 +26,8 @@ void dest_astk(astack_t *s) {
 int size(astack_t *s) {
   return s->top + 1;
 }
+
+void* top(astack_t *s) {
+  if(size(s) == 0) return NULL;
+  return (s->data)[s->top];
+}

@@ -31,3 +31,11 @@ void* top(astack_t *s) {
   if(size(s) == 0) return NULL;
   return (s->data)[s->top];
 }
+
+void push(astack_t *s, void *d) {
+  if(size(s) == s->capacity) {
+    fprintf(stderr, "Stack is full!\n");
+    exit(0);
+  }
+  s->data[++s->top] = d;
+}

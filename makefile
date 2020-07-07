@@ -20,6 +20,7 @@ MSLLTNAME  = mslltest
 DLLTNAME   = dlltest
 CLLTNAME   = clltest
 LSTKTNAME  = lstktest
+ASTKTNAME  = astktest
 
 default: $(TARGET)
 
@@ -53,6 +54,11 @@ lstktest: lstk-test.o lstk.o sll.o
 	$(CC) lstk-test.o lstk.o sll.o -o $(BUILD)/$(LSTKTNAME)
 	@echo '...done!'
 
+astktest: astk-test.o astk.o
+	@echo 'Building astack-test program...'
+	$(CC) astk-test.o astk.o -o $(BUILD)/$(ASTKTNAME)
+	@echo '...done!'
+
 sll-test.o: sll-test.c sll.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
@@ -66,6 +72,9 @@ cll-test.o: cll-test.c cll.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
 lstk-test.o: lstk-test.c lstk.h
+	$(CC) $(CFLAGS) $(INCLUDE) $<
+
+astk-test.o: astk-test.c astk.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
 sll.o: sll.c sll.h
@@ -90,6 +99,11 @@ cll.o: cll.c cll.h
 
 lstk.o: lstk.c lstk.h
 	@echo 'Building linked list stack module...'
+	$(CC) $(CFLAGS) $(INCLUDE) $<
+	@echo '...done!'
+
+astk.o: astk.c astk.h
+	@echo 'Building array stack module...'
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 	@echo '...done!'
 

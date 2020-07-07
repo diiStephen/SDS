@@ -21,7 +21,7 @@ struct Stack {
 typedef struct Stack astack_t;
 
 //Constructor and destructor
-void init_astk(astack_t *);
+void init_astk(astack_t *, int);
 void dest_astk(astack_t *);
 
 //Accessor functions.

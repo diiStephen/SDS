@@ -39,7 +39,6 @@ int main(void) {
     c_assert(size(&s) == 2);
     dest_aq(&s);
     footer("Test 2");
-
   }
 
   print_result;

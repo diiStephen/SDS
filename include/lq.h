@@ -21,5 +21,22 @@
 
 #include "sll.h"
 
+struct lq {
+  sll_t data;
+};
+
+typedef struct lq lqueue_t;
+
+/* Constructor and Destructor. */
+void init_aq(lqueue_t *);
+void dest_aq(lqueue_t *);
+
+/* Accessor operations. */
+int size(lqueue_t *);
+void* front(lqueue_t *);
+
+/* Mutator operations. */
+void enqueue(lqueue_t *, void *);
+void* dequeue(lqueue_t *);
 
 #endif

@@ -15,7 +15,7 @@ void init_aq(aqueue_t *q, int cap) {
     exit(0);
   }
 
-  q->front = -1;
+  q->front = 0;
   q->capacity = cap;
   q->size = 0;
 
@@ -29,4 +29,23 @@ void dest_aq(aqueue_t *q) {
     free(q->data);
     q->data = NULL;
   }
+}
+
+int size(aqueue_t *q) {
+  return q->size;
+}
+
+void* front(aqueue_t *q) {
+  if (q->size == 0) return NULL;
+  return q->data[q->front];
+}
+
+void enqueue(aqueue_t *q, void *d) {
+  if (q->size == q->capacity) {
+    fprintf(stderr, "Queue is full, cannot enqueue!\n");
+    exit(0);
+  }
+  int loc = (q->front+q->size) % q->capacity; //treat array q->data as a ring.
+  q->data[loc] = d;
+  q->size++;
 }

@@ -10,7 +10,7 @@
 * can be implemented in O(1) time. Functions that are in error state when the
 * queue is full will either shut the program down with an error.
 *
-* Default symbolic constant is given by CAPACITY for the user. 
+* Default symbolic constant is given by CAPACITY for the user.
 *
 * Generics: Generic container achieved through the use of void *.
 *
@@ -25,7 +25,7 @@
 
 struct queue {
   int capacity, front, size;
-  void *data;
+  void **data;
 };
 
 typedef struct queue aqueue_t;

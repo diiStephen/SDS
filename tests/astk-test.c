@@ -22,6 +22,21 @@ int main(int argc, char** argv) {
     footer("Test 1");
   }
 
+  {
+    header("Test 2");
+    astack_t s;
+    init_astk(&s, 10);
+    int *p = NULL;
+    for(int i = 0; i < 5; i++) {
+      p = malloc(sizeof(int));
+      *p = i;
+      push(&s, p);
+    }
+    c_assert(size(&s) == 5);
+    c_assert(*(int*)pop(&s) == 4);
+    dest_astk(&s);
+    footer("Test 2");
+  }
 
   print_result;
   return 0;

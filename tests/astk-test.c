@@ -19,6 +19,7 @@ int main(int argc, char** argv) {
 
     printf("Size of s: %d\n", size(&s));
     dest_astk(&s);
+    footer("Test 1");
   }
 
 

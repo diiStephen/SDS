@@ -21,6 +21,7 @@ DLLTNAME   = dlltest
 CLLTNAME   = clltest
 LSTKTNAME  = lstktest
 ASTKTNAME  = astktest
+AQTNAME		 = aqtest
 
 default: $(TARGET)
 
@@ -59,6 +60,11 @@ astktest: astk-test.o astk.o
 	$(CC) astk-test.o astk.o -o $(BUILD)/$(ASTKTNAME)
 	@echo '...done!'
 
+aqtest: aq-test.o aq.o
+	@echo 'Building aq-test program...'
+	$(CC) aq-test.o aq.o -o $(BUILD)/$(AQTNAME)
+	@echo '...done!'
+
 sll-test.o: sll-test.c sll.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
@@ -76,6 +82,9 @@ lstk-test.o: lstk-test.c lstk.h
 
 astk-test.o: astk-test.c astk.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
+
+aq-test.o: aq-test.c aq.h
+	$(CC) $(CFLAGS) $(INCLUDE) $< 
 
 sll.o: sll.c sll.h
 	@echo 'Building singly linked list module...'
@@ -104,6 +113,11 @@ lstk.o: lstk.c lstk.h
 
 astk.o: astk.c astk.h
 	@echo 'Building array stack module...'
+	$(CC) $(CFLAGS) $(INCLUDE) $<
+	@echo '...done!'
+
+aq.o: aq.c aq.h
+	@echo 'Building array queue module...'
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 	@echo '...done!'
 

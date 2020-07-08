@@ -5,6 +5,13 @@
 * to shift elements of the array back into place (an O(n) operation), the array
 * is treated as a ring.
 *
+* Additionally, the array storage for the data of the queue is a fixed sized
+* and will not be reallocated. This also ensures that the supported operations
+* can be implemented in O(1) time. Functions that are in error state when the
+* queue is full will either shut the program down with an error.
+*
+* Default symbolic constant is given by CAPACITY for the user. 
+*
 * Generics: Generic container achieved through the use of void *.
 *
 * Complexity:
@@ -14,6 +21,8 @@
 *   (iv)  dequeue -- O(1)
 */
 
+#define CAPACITY 1000
+
 struct queue {
   int capacity, front, size;
   void *data;
@@ -22,7 +31,7 @@ struct queue {
 typedef struct queue aqueue_t;
 
 /* Constructor and Destructor. */
-void init_aq(aqueue_t *);
+void init_aq(aqueue_t *, int);
 void dest_aq(aqueue_t *);
 
 /* Accessor operations. */

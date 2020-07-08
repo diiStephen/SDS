@@ -1,3 +1,8 @@
+#ifndef TESTER_H
+#define TESTER_H
+
+#include<stdio.h>
+
 #define header(msg)\
   do {\
     printf("-----------------------------\n");\
@@ -24,3 +29,5 @@
 
 int pass = 0;
 int fail = 0;
+
+#endif

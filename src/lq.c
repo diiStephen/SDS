@@ -1,4 +1,5 @@
 #include "lq.h"
+#include<stdlib.h>
 
 void init_lq(lqueue_t *q) {
   init_sll(q->data);

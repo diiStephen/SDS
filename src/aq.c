@@ -45,7 +45,16 @@ void enqueue(aqueue_t *q, void *d) {
     fprintf(stderr, "Queue is full, cannot enqueue!\n");
     exit(0);
   }
-  int loc = (q->front+q->size) % q->capacity; //treat array q->data as a ring.
+  int loc = ( q->front + q->size ) % q->capacity; //treat array q->data as a ring.
   q->data[loc] = d;
   q->size++;
+}
+
+void* dequeue(aqueue_t *q) {
+  if (q->size == 0) return NULL;
+  void *ans = q->data[q->front];
+  q->data[q->front] = NULL;
+  q->front = ( q->front + 1 ) % q->capacity;
+  q->size--;
+  return ans;
 }

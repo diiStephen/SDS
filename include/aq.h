@@ -1,3 +1,6 @@
+#ifndef A_QUEUE_H
+#define A_QUEUE_H
+
 /*
 * Description: Array based queue implementation. Array is treated a circular
 * buffer to ensure that enqueue and dequeue operations are O(1) time each. Since
@@ -41,3 +44,5 @@ void* front(aqueue_t *);
 /* Mutator operations. */
 void enqueue(aqueue_t *, void *);
 void* dequeue(aqueue_t *);
+
+#endif

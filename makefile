@@ -22,6 +22,7 @@ CLLTNAME   = clltest
 LSTKTNAME  = lstktest
 ASTKTNAME  = astktest
 AQTNAME		 = aqtest
+LQTNAME 	 = lqtest
 
 default: $(TARGET)
 
@@ -65,6 +66,11 @@ aqtest: aq-test.o aq.o
 	$(CC) aq-test.o aq.o -o $(BUILD)/$(AQTNAME)
 	@echo '...done!'
 
+lqtest: lq-test.o lq.o sll.o
+	@echo 'Building lq-test program...'
+	$(CC) lq-test.o lq.o sll.o -o $(BUILD)/$(LQTNAME)
+	@echo '...done!'
+
 sll-test.o: sll-test.c sll.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
@@ -84,7 +90,10 @@ astk-test.o: astk-test.c astk.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 
 aq-test.o: aq-test.c aq.h
-	$(CC) $(CFLAGS) $(INCLUDE) $< 
+	$(CC) $(CFLAGS) $(INCLUDE) $<
+
+lq-test.o: lq-test.c lq.h
+	$(CC) $(CFLAGS) $(INCLUDE) $<
 
 sll.o: sll.c sll.h
 	@echo 'Building singly linked list module...'
@@ -121,6 +130,11 @@ aq.o: aq.c aq.h
 	$(CC) $(CFLAGS) $(INCLUDE) $<
 	@echo '...done!'
 
+lq.o: lq.c lq.h
+	@echo 'Building list queue module...'
+	$(CC) $(CFLAGS) $(INCLUDE) $<
+	@echo '...done!'
+	
 clean:
 	@echo 'Cleaning...'
 	rm -f *.o

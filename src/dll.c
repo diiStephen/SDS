@@ -4,8 +4,10 @@
 
 node_t* new_node(node_t * p, node_t * n, void * d) {
   node_t *newest = malloc(sizeof(node_t));
-  if(newest == NULL)
+  if(newest == NULL) {
     fprintf(stderr, "Could not allocate memory for new node!\n");
+    exit(0);
+  }
   newest->prev = p;
   newest->next = n;
   newest->data = d;

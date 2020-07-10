@@ -23,6 +23,9 @@ are basically the same. It is also unclear if the benefit of using a makefile,
 such as compiling only the modules that have changed, is worth it here.
 The flexibility of using a Python script may outweigh the benefits of the makefile.
 
+UPDATE 2020/07/10 -- Investigating replacing make with meson. Also, rearranging the 
+repository directory structure for greater clarity. 
+
 2. The test programs themselves for each data structure are largely the
 same. There should be a unified testing framework for testing the data
 structures so that I only have to write one testing program and plugin
